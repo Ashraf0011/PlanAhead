@@ -1,18 +1,48 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
+    <button ion-button menuToggle start>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
+<ion-content id="hom" padding>
+  <h5> It's <strong> {{ currentTime | moment }} </strong> now. </h5>
+  <p> You made it through the login step. <br> Now we have to plan for the week. Before that, lets see some fun facts about TIME. <br> Have a look at the sections below.</p>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <!--- card 1 --->
+  <ion-card>
+  <ion-card-header>
+      <h2>Fun fact: Time</h2>
+    </ion-card-header>
+        <ion-item>
+          <ion-icon item-start name="walk"> </ion-icon>
+          <h3> Feet is slower then Head!</h3>
+          <p> {{ currentTime | moment }} </p>
+        </ion-item>
+        <ion-card-content>
+          Einstein's theory of relativity dictates that the closer you are to the centre of the Earth, the slower time goes – and this has been measured. At the top of Mount Everest, a year would be about 15 microseconds shorter than at sea level.
+        </ion-card-content>
+      </ion-card>
+<!--- card 2 --->
+  <ion-card>
+          <ion-item >
+              <ion-avatar item-start>
+                <img src="../../assets/imgs/IMG_0837.jpg">
+              </ion-avatar>
+              <h1>Week in Brief</h1>
+              <p>November 5, 1955</p>
+            </ion-item>
+          <ion-card-content>
+            <ion-list>
+              <p>In One week, we have <strong>7 Days in hand.</strong> <br>
+                 So, we have 7*24 = <strong>168 Hours</strong>  <br>
+                Which means we have 186*60 = <strong> 10080 Minutes </strong>  <br>
+                Just to let you know, it is the summation of <strong>604,800 Seconds </strong>  </p>
+            </ion-list>
+          </ion-card-content>
+          </ion-card>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
 
   <button ion-button secondary menuToggle>Toggle Menu</button>
 </ion-content>

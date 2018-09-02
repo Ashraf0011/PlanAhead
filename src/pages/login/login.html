@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title >Secure Your login </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  padding>
+<p> Please Login to app using you information. We will save data to your device's internal memory.</p>
+
+      <ion-list>
+          <ion-item>
+            <ion-label floating > <ion-icon name="contact"></ion-icon> Username</ion-label>
+            <ion-input type="text" #username ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>   <ion-icon name="key"></ion-icon> Password</ion-label>
+            <ion-input type="password" #password ></ion-input>
+          </ion-item>
+      </ion-list>
+
+    <ion-buttons>
+      <button ion-button (click)="funcLogin(); openPage()" > Login </button>
+       <button ion-button (click)="funcRegister()" float-right> Register </button>
+    </ion-buttons>
+
+
+
+</ion-content>

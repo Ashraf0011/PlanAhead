@@ -1,0 +1,22 @@
+
+
+
+<ion-content  padding>
+    <h3> Signup to Daily Diary. </h3>
+    <p> This app will save data in your device. If you loose your password, Daily diary can not help you re recover your password. <br>
+
+    </p>
+  <ion-list >
+      <ion-item>
+        <ion-label floating>Name:</ion-label><ion-input type="text" #name ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Username:</ion-label><ion-input type="text" #username ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Password:</ion-label> <ion-input type="password" #password ></ion-input>
+      </ion-item>
+  </ion-list>
+
+  <button ion-button end margin-top color="primary3" (click)="signupFunc(); openPage()" >Signup</button>
+</ion-content>
