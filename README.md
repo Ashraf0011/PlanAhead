@@ -1,6 +1,6 @@
 # PlanAhead
 
-### This program was tested using these following configuration:
+### This program was tested using following configuration:
 
 **Ionic:**
 
