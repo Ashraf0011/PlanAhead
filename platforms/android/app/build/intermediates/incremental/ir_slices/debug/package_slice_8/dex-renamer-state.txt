@@ -1,0 +1,4 @@
+#Fri Sep 21 14:01:47 ACST 2018
+base.0=/Users/islam/Documents/GitHub/PlanAhead/platforms/android/app/build/intermediates/transforms/dexMerger/debug/8
+path.0=classes.dex
+renamed.0=classes.dex
