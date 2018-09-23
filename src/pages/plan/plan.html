@@ -25,11 +25,11 @@
     <ion-list-header>
       <ion-icon name="book" color="another2" item-start></ion-icon>
           <ion-label>Study</ion-label>
-      <ion-icon item-end color="secondary" name="add" (click)="addStudyAlert()"></ion-icon>
+      <ion-icon item-end color="secondary" name="add" (click)="addStudy()"></ion-icon>
     </ion-list-header>
     <!--- study list items --->
-    <ion-item *ngFor="let item of subjectName">
-      <ion-label> {{ item }} Hours</ion-label> <ion-input type="number" id="Value1" placeholder="Numbers Only"></ion-input>
+    <ion-item *ngFor="let std of study | async ">
+      <ion-label> {{ std.hour  }} Hours for {{ std.name  }}</ion-label>
     </ion-item>
 
     <!--- HEADER   Exercise  hours  --->
@@ -37,11 +37,11 @@
     <ion-list-header>
       <ion-icon name="body" color="secondary" item-start></ion-icon>
           <ion-label>Exercise </ion-label>
-      <ion-icon item-end color="secondary" name="add" (click)="addExerciseAlert()"></ion-icon>
+      <ion-icon item-end color="secondary" name="add" (click)="addExercise()"></ion-icon>
     </ion-list-header>
     <!--- Exercise list items --->
-    <ion-item *ngFor="let exercise of exerciseName">
-      <ion-label > {{ exercise }} Hours</ion-label> <ion-input  type="number" id="Value2" placeholder="Numbers Only"></ion-input>hours
+    <ion-item *ngFor="let exr of exercise | async ">
+       <ion-label> {{ exr.hour  }} Hours for {{ exr.name }}</ion-label>
     </ion-item>
 
     <!--- HEADER    Entertainment --->
@@ -49,11 +49,11 @@
     <ion-list-header>
       <ion-icon name="film" color="another1" item-start></ion-icon>
           <ion-label>Entertainment </ion-label>
-      <ion-icon item-end color="secondary" name="add" (click)="addMovieAlert()"></ion-icon>
+      <ion-icon item-end color="secondary" name="add" (click)="addMovie()"></ion-icon>
     </ion-list-header>
     <!--- Entertainment list items --->
-    <ion-item *ngFor="let entertainment of movieName">
-      <ion-label> {{ entertainment }} </ion-label> <ion-input type="number" id="inputValue" placeholder="Numbers Only"></ion-input>
+    <ion-item *ngFor="let mov of movie | async">
+       <ion-label> {{ mov.hour }} Hours for {{ mov.name }}</ion-label>
     </ion-item>
 
     <!--- HEADER  travel hours --->
@@ -61,22 +61,36 @@
     <ion-list-header>
       <ion-icon name="bus" color="dark" item-start></ion-icon>
           <ion-label>Travel </ion-label>
-      <ion-icon item-end color="secondary" name="add" (click)="addPlaceAlert()"></ion-icon>
+      <ion-icon item-end color="secondary" name="add" (click)="addTravel()"></ion-icon>
     </ion-list-header>
 
     <!--- travel list items --->
-    <ion-item *ngFor="let travel of placeName">
-      <ion-label> {{ travel }} </ion-label> <ion-input type="number" id="inputValue" placeholder="Numbers Only"></ion-input>
+    <ion-item *ngFor="let tra of travel | async">
+       <ion-label> {{ tra.hour  }} Hours for {{ tra.name  }}</ion-label>
+    </ion-item>
+
+
+<!--- HEADER  Skill hours --->
+    <br>
+    <ion-list-header>
+      <ion-icon name="bus" color="dark" item-start></ion-icon>
+          <ion-label>Skill </ion-label>
+      <ion-icon item-end color="secondary" name="add" (click)="addSkill()"></ion-icon>
+    </ion-list-header>
+
+    <!--- travel list items --->
+    <ion-item *ngFor="let ski of skill | async">
+       <ion-label> {{ ski.hour  }} Hours for {{ ski.name  }}</ion-label>
     </ion-item>
 
     <br>
     <ion-list-header>
       <ion-icon name="bonfire"  color="danger" item-start></ion-icon>
           <ion-label>Other Activity </ion-label>
-      <ion-icon item-end color="secondary" name="add" (click)="addOtherAlert()"></ion-icon>
+      <ion-icon item-end color="secondary" name="add" (click)="addOther()"></ion-icon>
     </ion-list-header>
-    <ion-item *ngFor="let other of otherName">
-      <ion-label> {{ other }} </ion-label> <ion-input type="number" id="inputValue" placeholder="Numbers Only"></ion-input>
+    <ion-item *ngFor="let oth of other | async">
+       <ion-label> {{ oth.hour  }} Hours for {{ oth.name }}</ion-label>
     </ion-item>
 
   </ion-list>

@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import {  Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -11,6 +11,7 @@ import {SummaryPage} from "../pages/summary/summary";
 import {PlanPage} from "../pages/plan/plan";
 
 @Component({
+
   templateUrl: 'app.html'
 })
 export class MyApp {
