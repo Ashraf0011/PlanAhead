@@ -32,7 +32,7 @@ export class MoviePage {
 
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad StudyPage');
+    console.log('ionViewDidLoad MoviePage');
   }
 
 

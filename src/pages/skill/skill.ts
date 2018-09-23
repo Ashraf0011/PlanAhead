@@ -23,7 +23,7 @@ export class SkillPage {
 
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad StudyPage');
+    console.log('ionViewDidLoad SkillPage');
   }
 
 

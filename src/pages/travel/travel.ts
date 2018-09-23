@@ -24,7 +24,7 @@ export class TravelPage {
 
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad StudyPage');
+    console.log('ionViewDidLoad TravelPage');
   }
 
 
