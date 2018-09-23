@@ -65,7 +65,7 @@
     </ion-list-header>
 
     <!--- travel list items --->
-    <ion-item *ngFor="let tra of travel| async">
+    <ion-item *ngFor="let tra of travel | async">
        <ion-label> {{ tra.hour  }} Hours for {{ tra.name  }}</ion-label>
     </ion-item>
 

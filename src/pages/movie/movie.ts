@@ -26,7 +26,7 @@ export class MoviePage {
               public viewCtrl: ViewController,
               public fdb: AngularFireDatabase) {
 
-    this.movie = fdb.list('/items/other');
+    this.movie = fdb.list('/items/movie');
 
   };
 
@@ -44,7 +44,7 @@ export class MoviePage {
     this.movie.push({
       name: name,
       hour: hour
-    }).then(newOther => {
+    }).then(newMovie => {
           this.navCtrl.push(PlanPage);
           }, error => { console.log(error);
     });
