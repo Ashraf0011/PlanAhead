@@ -1,5 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import {IonicPage, NavController, NavParams, ViewController,} from 'ionic-angular';
+import { AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
+import { StudyPage } from '../study/study';
+import { ExercisePage } from "../exercise/exercise";
+import { MoviePage } from "../movie/movie";
+import { TravelPage } from "../travel/travel";
+import { SkillPage } from "../skill/skill";
+import { OtherPage } from "../other/other";
 
 /**
  * Generated class for the PlanPage page.
@@ -14,87 +21,56 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
   templateUrl: 'plan.html',
 })
 export class PlanPage {
-  public subjectName = [];
-  public exerciseName =[];
-  public movieName = [];
-  public placeName = [];
-  public otherName = [];
+
+  study : FirebaseListObservable<any[]>;
+  exercise : FirebaseListObservable<any[]>;
+  movie : FirebaseListObservable<any[]>;
+  travel : FirebaseListObservable<any[]>;
+  skill : FirebaseListObservable<any[]>;
+  other : FirebaseListObservable<any[]>;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public viewCtrl: ViewController,
+              public fdb: AngularFireDatabase) {
+
+    this.study = fdb.list('/items/study');
+    this.exercise = fdb.list('/items/exercise');
+    this.movie = fdb.list('/items/movie');
+    this.travel = fdb.list('/items/travel');
+    this.skill = fdb.list('/items/skill');
+    this.other = fdb.list('/items/other');
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PlanPage');
   }
 
-  addStudyAlert(){
-    let addItemAlert = this.alertCtrl.create({
-      title: "Add new item",
-      message: "Please type the Entry Name. Ex: Math/Swimming/Hobby",
-      inputs:[{type: "Text", name: "Subject"}],
-      buttons:[{text: "Cancel",},
-        {text: "Add to list",
-          handler:(inputData)=>{
-          let addEvent;
-          addEvent = inputData.Subject;
-          this.subjectName.push(addEvent);
-        }}]
-    });addItemAlert.present();}
+  dismiss(){
+    this.viewCtrl.dismiss();
+  }
 
-    addExerciseAlert(){
-    let addItemAlert = this.alertCtrl.create({
-      title: "Add new item",
-      message: "Please type the Entry Name. Ex: Math/Swimming/Hobby",
-      inputs:[{type: "Text", name: "Subject"}],
-      buttons:[{text: "Cancel",},
-        {text: "Add to list",
-          handler:(inputData)=>{
-          let addEvent;
-          addEvent = inputData.Subject;
-          this.exerciseName.push(addEvent);
-        }}]
-    });addItemAlert.present();}
+  addStudy(){
+    this.navCtrl.push(StudyPage);
+  }
+  addExercise(){
+    this.navCtrl.push(ExercisePage);
+  }
+  addMovie(){
+    this.navCtrl.push(MoviePage);
+  }
+  addTravel(){
+    this.navCtrl.push(TravelPage);
+  }
+  addSkill(){
+    this.navCtrl.push(SkillPage);
+  }
+  addOther(){
+    this.navCtrl.push(OtherPage);
+  }
 
-    addMovieAlert(){
-    let addItemAlert = this.alertCtrl.create({
-      title: "Add new item",
-      message: "Please type the Entry Name. Ex: Math/Swimming/Hobby",
-      inputs:[{type: "Text", name: "Subject"}],
-      buttons:[{text: "Cancel",},
-        {text: "Add to list",
-          handler:(inputData)=>{
-          let addEvent;
-          addEvent = inputData.Subject;
-          this.movieName.push(addEvent);
-        }}]
-    });addItemAlert.present();}
 
-    addPlaceAlert(){
-    let addItemAlert = this.alertCtrl.create({
-      title: "Add new item",
-      message: "Please type the Entry Name. Ex: Math/Swimming/Hobby",
-      inputs:[{type: "Text", name: "Subject"}],
-      buttons:[{text: "Cancel",},
-        {text: "Add to list",
-          handler:(inputData)=>{
-          let addEvent;
-          addEvent = inputData.Subject;
-          this.placeName.push(addEvent);
-        }}]
-    });addItemAlert.present();}
-    addOtherAlert(){
-        let addItemAlert = this.alertCtrl.create({
-          title: "Add new item",
-          message: "Please type the Entry Name. Ex: Math/Swimming/Hobby",
-          inputs:[{type: "Text", name: "Subject"}],
-          buttons:[{text: "Cancel",},
-            {text: "Add to list",
-              handler:(inputData)=>{
-              let addEvent;
-              addEvent = inputData.Subject;
-              this.otherName.push(addEvent);
-            }}]
-        });addItemAlert.present();}
 
 }
