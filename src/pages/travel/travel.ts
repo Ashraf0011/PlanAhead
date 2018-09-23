@@ -10,7 +10,7 @@ import { PlanPage } from "../plan/plan";
 })
 export class TravelPage {
 
-  travel : FirebaseListObservable<any>;
+  travel : FirebaseListObservable<any[]>;
 
 
   constructor(public navCtrl: NavController,

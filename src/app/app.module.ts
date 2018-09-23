@@ -32,7 +32,6 @@ const config = {
     apiKey: "AIzaSyDBN--FhVd9m5z4uux3YlOSxUFqm4E4spE",
     authDomain: "planahead-69dd6.firebaseapp.com",
     databaseURL: "https://planahead-69dd6.firebaseio.com",
-    projectId: "planahead-69dd6",
     storageBucket: "planahead-69dd6.appspot.com",
     messagingSenderId: "1063578646965"
   };

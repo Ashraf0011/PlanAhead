@@ -10,7 +10,7 @@ import { PlanPage } from "../plan/plan";
 })
 export class StudyPage {
 
-  study : FirebaseListObservable<any>;
+  study : FirebaseListObservable<any[]>;
 
 
   constructor(public navCtrl: NavController,
