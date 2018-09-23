@@ -10,7 +10,7 @@ import { PlanPage } from "../plan/plan";
 })
 export class TravelPage {
 
-  travel : FirebaseListObservable<any[]>;
+  travel : FirebaseListObservable<any>;
 
 
   constructor(public navCtrl: NavController,
@@ -34,8 +34,8 @@ export class TravelPage {
 
   createTravel(name, hour){
     this.travel.push({
-      name: name,
-      hour: hour
+      'name': name,
+      'hour': hour
     }).then(newTravel => {
           this.navCtrl.push(PlanPage);
           }, error => { console.log(error);

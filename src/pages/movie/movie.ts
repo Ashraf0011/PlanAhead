@@ -42,8 +42,8 @@ export class MoviePage {
 
   createMovie(name, hour){
     this.movie.push({
-      name: name,
-      hour: hour
+      'name': name ,
+       'hour': hour
     }).then(newMovie => {
           this.navCtrl.push(PlanPage);
           }, error => { console.log(error);

@@ -10,7 +10,7 @@ import { PlanPage } from "../plan/plan";
 })
 export class SkillPage {
 
-  skill : FirebaseListObservable<any[]>;
+  skill : FirebaseListObservable<any>;
 
 
   constructor(public navCtrl: NavController,
@@ -33,8 +33,8 @@ export class SkillPage {
 
   createSkill(name, hour){
     this.skill.push({
-     name: name,
-      hour: hour
+     'name': name ,
+     'hour': hour
     }).then(newSkill => {
           this.navCtrl.push(PlanPage);
           }, error => { console.log(error);

@@ -10,13 +10,14 @@ import { PlanPage } from "../plan/plan";
 })
 export class OtherPage {
 
-  other: FirebaseListObservable<any[]>;
+  other: FirebaseListObservable<any>;
 
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public viewCtrl: ViewController,
               public fdb: AngularFireDatabase) {
+
     this.other = fdb.list('/items/other');
 
   };
@@ -33,8 +34,8 @@ export class OtherPage {
 
   createOther(name, hour){
     this.other.push({
-      name: name,
-      hour: hour
+      'name': name ,
+       'hour': hour
     }).then(newOther => {
           this.navCtrl.push(PlanPage);
           }, error => { console.log(error);

@@ -33,8 +33,8 @@ export class ExercisePage {
 
   createExercise(name, hour){
     this.exercise.push({
-       name: name ,
-      hour: hour
+       'name': name ,
+      'hour': hour
     }).then(newExercise => {
           this.navCtrl.push(PlanPage);
           }, error => { console.log(error);

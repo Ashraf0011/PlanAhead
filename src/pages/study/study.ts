@@ -10,7 +10,7 @@ import { PlanPage } from "../plan/plan";
 })
 export class StudyPage {
 
-  study : FirebaseListObservable<any[]>;
+  study : FirebaseListObservable<any>;
 
 
   constructor(public navCtrl: NavController,
@@ -33,8 +33,8 @@ export class StudyPage {
 
   createStudy(name, hour){
     this.study.push({
-      name : name,
-      hour : hour
+      'name' : name,
+      'hour' : hour
     }).then(newStudy => {
           this.navCtrl.push(PlanPage);
           }, error => { console.log(error);
