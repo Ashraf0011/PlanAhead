@@ -34,8 +34,8 @@ export class TravelPage {
 
   createTravel(name, hour){
     this.travel.push({
-      'name': name,
-      'hour': hour
+       name : "String",
+           hour : "Number"
     }).then(newTravel => {
           this.navCtrl.push(PlanPage);
           }, error => { console.log(error);

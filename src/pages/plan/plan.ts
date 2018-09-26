@@ -22,12 +22,12 @@ import { OtherPage } from "../other/other";
 })
 export class PlanPage {
 
-  study : FirebaseListObservable<any[]>;
-  exercise : FirebaseListObservable<any[]>;
-  movie : FirebaseListObservable<any[]>;
-  travel : FirebaseListObservable<any[]>;
-  skill : FirebaseListObservable<any[]>;
-  other : FirebaseListObservable<any[]>;
+  study : FirebaseListObservable<any>;
+  exercise : FirebaseListObservable<any>;
+  movie : FirebaseListObservable<any>;
+  travel : FirebaseListObservable<any>;
+  skill : FirebaseListObservable<any>;
+  other : FirebaseListObservable<any>;
 
 
   constructor(public navCtrl: NavController,
